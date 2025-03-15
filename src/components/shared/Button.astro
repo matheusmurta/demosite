@@ -1,10 +1,11 @@
 ---
-export interface Props{
-    className?:string,
-    variant:"primary"|"secondary"
+export interface Props {
+    className?: string;
+    variant: "primary" | "secondary";
+    type?: "button" | "submit" | "reset"; // Adiciona suporte ao atributo type
 }
 
-const {className, variant} = Astro.props
+const { className, variant, type = "submit" } = Astro.props; // Define o padrão como "button"
 
 const getThemeStyle = (variant:"primary"|"secondary")=>{
     if (variant === "primary") {
